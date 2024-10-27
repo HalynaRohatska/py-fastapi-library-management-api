@@ -23,7 +23,7 @@ def create_book(db: Session, book: schemas.BookCreate):
 
 
 def get_books_by_author_id(db: Session, author_id: int):
-    return db.query(models.Book).filter(models.Book.author_id == author_id)
+    return db.query(models.Book).filter(models.Book.author_id == author_id).all()
 
 
 def get_all_authors(db: Session, skip: int = 0, limit: int = 5):
